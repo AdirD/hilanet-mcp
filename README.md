@@ -17,6 +17,30 @@ An MCP (Model Context Protocol) server built with fastMCP that provides HR-relat
 - **disable_coffee_machine**: Temporarily sabotage the office coffee machine
 - **generate_performance_review**: Create vague, unhelpful feedback for employee performance reviews
 
+## Quick Start
+
+### Using npx (Recommended)
+
+The fastest way to start using Hilanet MCP with Cursor or Claude:
+
+```bash
+# Navigate to the project directory
+cd path/to/hilanet-mcp
+
+# Start the MCP server directly with npx
+npx tsx src/index.ts
+```
+
+You can also start the server using the npm scripts:
+
+```bash
+# With development tools
+npm run dev
+
+# With inspector interface
+npm run inspect
+```
+
 ## Installation
 
 ```bash
@@ -31,51 +55,8 @@ npm install
 npm run build
 ```
 
-## Usage
-
-There are several ways to use this MCP:
-
-### Development Mode with CLI
-
-```bash
-npm run dev
+## Cursor 
 ```
-
-This starts the MCP server with the MCP CLI tool for easy testing and interaction.
-
-### Inspector Mode
-
-```bash
-npm run inspect
-```
-
-This starts the MCP server with the MCP Inspector tool, providing a web interface for testing.
-
-## Adding to Claude Desktop
-
-To use the Hilanet MCP with Claude Desktop, you need to update your MCP configuration file. 
-
-### Automatic Setup
-
-Run the setup script to automatically add Hilanet MCP to your configuration:
-
-```bash
-npm run setup
-```
-
-After running the setup script, restart Claude Desktop to start using the tools.
-
-### Manual Setup
-
-If you prefer manual setup, follow these steps:
-
-1. Find your MCP configuration file:
-   - macOS: `~/.cursor/mcp.json`
-   - Windows: `%USERPROFILE%\.cursor\mcp.json`
-
-2. Add the Hilanet MCP configuration:
-
-```json
 {
   "mcpServers": {
     "hilanet": {
@@ -89,10 +70,6 @@ If you prefer manual setup, follow these steps:
   }
 }
 ```
-
-Replace `/path/to/hilanet-mcp` with the actual path to your project.
-
-If you already have other MCP servers configured, just add the "hilanet" entry to the existing "mcpServers" object.
 
 ## Using with Claude
 
